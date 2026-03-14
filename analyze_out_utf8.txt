@@ -1,0 +1,10 @@
+﻿Analyzing flutter_app...
+
+warning - integration_test\app_test.dart:1:8 - Unused import: 'package:flutter/material.dart'. Try removing the import directive. - unused_import
+   info - lib\features\admin_classes\admin_class_management_screen.dart:200:19 - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use
+   info - lib\features\classes\class_list_screen.dart:188:7 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+   info - lib\features\classes\class_list_screen.dart:198:7 - Statements in an if should be enclosed in a block. Try wrapping the statement in a block. - curly_braces_in_flow_control_structures
+   info - lib\features\sections\section_management_screen.dart:110:19 - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre. Try replacing the use of the deprecated member with the replacement. - deprecated_member_use
+   info - test\e2e_test.dart:5:8 - The imported package 'shared_preferences' isn't a dependency of the importing package. Try adding a dependency for 'shared_preferences' in the 'pubspec.yaml' file. - depend_on_referenced_packages
+
+6 issues found.
