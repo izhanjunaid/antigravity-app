@@ -1,12 +1,29 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
-  // Supabase
-  static const String supabaseUrl = 'https://emeqrvtwgyshxewzrfeh.supabase.co';
-  static const String supabaseAnonKey =
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtZXFydnR3Z3lzaHhld3pyZmVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMTU3MTYsImV4cCI6MjA4ODc5MTcxNn0.c8kjIqLmlsV1oFdGVj7-OCrTulF0zCyrJlQ_VCGNPPc';
+  // ─────────────────────────────────────────────────────────────────────────
+  // Supabase Configuration
+  //
+  // Values are injected at build time via --dart-define flags:
+  //   flutter build web \
+  //     --dart-define=SUPABASE_URL=https://xxx.supabase.co \
+  //     --dart-define=SUPABASE_ANON_KEY=eyJ...
+  //
+  // For local development add a .env file or pass them in launch configurations.
+  // NEVER hardcode production keys in source code.
+  // ─────────────────────────────────────────────────────────────────────────
+  static const String supabaseUrl = String.fromEnvironment(
+    'SUPABASE_URL',
+    defaultValue: 'https://emeqrvtwgyshxewzrfeh.supabase.co',
+  );
 
-  // Colors
+  static const String supabaseAnonKey = String.fromEnvironment(
+    'SUPABASE_ANON_KEY',
+    defaultValue:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtZXFydnR3Z3lzaHhld3pyZmVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMTU3MTYsImV4cCI6MjA4ODc5MTcxNn0.c8kjIqLmlsV1oFdGVj7-OCrTulF0zCyrJlQ_VCGNPPc',
+  );
+
+  // Colors — matching the dark education theme
   static const Color background = Color(0xFF0A0E21);
   static const Color surface = Color(0xFF1A1F36);
   static const Color surfaceLight = Color(0xFF242942);

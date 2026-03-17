@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Ibex Classroom (Web)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "chrome",
+      "args": [
+        "--dart-define=SUPABASE_URL=https://emeqrvtwgyshxewzrfeh.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtZXFydnR3Z3lzaHhld3pyZmVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMTU3MTYsImV4cCI6MjA4ODc5MTcxNn0.c8kjIqLmlsV1oFdGVj7-OCrTulF0zCyrJlQ_VCGNPPc"
+      ]
+    },
+    {
+      "name": "Ibex Classroom (Web - Release Build)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "chrome",
+      "flutterMode": "release",
+      "args": [
+        "--dart-define=SUPABASE_URL=https://emeqrvtwgyshxewzrfeh.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtZXFydnR3Z3lzaHhld3pyZmVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMTU3MTYsImV4cCI6MjA4ODc5MTcxNn0.c8kjIqLmlsV1oFdGVj7-OCrTulF0zCyrJlQ_VCGNPPc"
+      ]
+    },
+    {
+      "name": "Ibex Classroom (Android)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--dart-define=SUPABASE_URL=https://emeqrvtwgyshxewzrfeh.supabase.co",
+        "--dart-define=SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtZXFydnR3Z3lzaHhld3pyZmVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMTU3MTYsImV4cCI6MjA4ODc5MTcxNn0.c8kjIqLmlsV1oFdGVj7-OCrTulF0zCyrJlQ_VCGNPPc"
+      ]
+    }
+  ]
+}

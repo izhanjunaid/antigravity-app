@@ -1,45 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
+    Ibex Classroom — Flutter PWA
+    Base href is replaced by flutter build --base-href
   -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="ibex_app">
+  <!-- CRITICAL: Viewport with viewport-fit=cover for iOS notch/safe area support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- Primary Meta Tags -->
+  <title>Ibex Classroom</title>
+  <meta name="title" content="Ibex Classroom">
+  <meta name="description" content="Ibex Classroom — A modern school management and learning platform for students, teachers, and administrators.">
+  <meta name="keywords" content="classroom, school, students, teachers, assignments, attendance, education">
+  <meta name="author" content="Ibex">
+  <meta name="theme-color" content="#0A0E21">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- ============================================================ -->
+  <!-- iOS / Apple PWA Support                                       -->
+  <!-- ============================================================ -->
+  <!-- Full-screen app mode on iOS Safari -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- Status bar appearance: black-translucent shows content behind status bar -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <!-- App name when installed -->
+  <meta name="apple-mobile-web-app-title" content="Ibex Classroom">
+
+  <!-- Apple Touch Icons (iOS requires these — manifest icons are ignored) -->
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="icons/Icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+  <!-- ============================================================ -->
+  <!-- iOS Splash Screens (Launch Images)                           -->
+  <!-- Required for smooth full-screen launch on iOS                -->
+  <!-- ============================================================ -->
+  <!-- iPhone 14 Pro Max / 15 Plus (430×932) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    href="splash/apple-splash-1290-2796.png">
+  <!-- iPhone 14 Pro / 15 (393×852) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    href="splash/apple-splash-1179-2556.png">
+  <!-- iPhone 14 / 13 / 12 (390×844) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    href="splash/apple-splash-1170-2532.png">
+  <!-- iPhone 11 Pro Max / XS Max (414×896) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    href="splash/apple-splash-1242-2688.png">
+  <!-- iPhone 11 / XR (414×896 @2x) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    href="splash/apple-splash-828-1792.png">
+  <!-- iPhone X / XS / 11 Pro (375×812) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    href="splash/apple-splash-1125-2436.png">
+  <!-- iPhone 8 Plus (414×736) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    href="splash/apple-splash-1242-2208.png">
+  <!-- iPhone 8 / SE (375×667) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    href="splash/apple-splash-750-1334.png">
+  <!-- iPad Pro 12.9" (1024×1366) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    href="splash/apple-splash-2048-2732.png">
+  <!-- iPad Pro 11" (834×1194) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    href="splash/apple-splash-1668-2388.png">
+  <!-- iPad Air 10.9" (820×1180) -->
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    href="splash/apple-splash-1640-2360.png">
+
+  <!-- ============================================================ -->
+  <!-- Open Graph / Social Sharing                                   -->
+  <!-- ============================================================ -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ibex Classroom">
+  <meta property="og:description" content="A modern school management and learning platform.">
+  <meta property="og:image" content="icons/Icon-512.png">
+  <meta property="og:url" content="">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ibex Classroom">
+  <meta name="twitter:description" content="A modern school management and learning platform.">
+  <meta name="twitter:image" content="icons/Icon-512.png">
+
+  <!-- ============================================================ -->
+  <!-- Performance: Preconnect to critical third-party origins       -->
+  <!-- ============================================================ -->
+  <link rel="preconnect" href="https://emeqrvtwgyshxewzrfeh.supabase.co">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
 
-  <title>ibex_app</title>
-  <link rel="manifest" href="manifest.json">
+  <!-- ============================================================ -->
+  <!-- Loading Screen Styles (shown before Flutter initializes)     -->
+  <!-- ============================================================ -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #0A0E21;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    #flutter-loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #0A0E21;
+      z-index: 9999;
+      transition: opacity 0.4s ease-out;
+    }
+
+    #flutter-loading.hidden { opacity: 0; pointer-events: none; }
+
+    .loading-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #2979FF, #448AFF);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      box-shadow: 0 8px 32px rgba(41, 121, 255, 0.4);
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(41, 121, 255, 0.2);
+      border-top-color: #2979FF;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    .loading-text {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
 
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
+  <!-- ============================================================ -->
+  <!-- Native loading screen — hidden once Flutter is ready         -->
+  <!-- ============================================================ -->
+  <div id="flutter-loading">
+    <div class="loading-logo">🎓</div>
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Ibex Classroom</div>
+  </div>
+
+  <script>
+    // Remove the loading screen once Flutter signals it is ready.
+    window.addEventListener('flutter-first-frame', function () {
+      var loader = document.getElementById('flutter-loading');
+      if (loader) {
+        loader.classList.add('hidden');
+        setTimeout(function () { loader.remove(); }, 500);
+      }
+    });
+  </script>
+
+  <!--
+    Flutter bootstrap script — initializes the Flutter engine.
+    See: https://docs.flutter.dev/platform-integration/web/initialization
   -->
   <script src="flutter_bootstrap.js" async></script>
 </body>

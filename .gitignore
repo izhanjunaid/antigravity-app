@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Vercel deployment config (contains project IDs — add to GitHub Secrets instead)
+.vercel/
+.vercel
