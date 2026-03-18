@@ -107,7 +107,7 @@ class _SectionManagementScreenState extends State<SectionManagementScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 DropdownButtonFormField<String>(
-                  value: selectedGradeId,
+                  initialValue: selectedGradeId,
                   dropdownColor: AppConstants.surface,
                   style: const TextStyle(color: AppConstants.textPrimary),
                   decoration: const InputDecoration(

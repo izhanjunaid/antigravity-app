@@ -294,7 +294,7 @@ class _CreateAssignmentScreenState extends State<CreateAssignmentScreen> {
                               Switch(
                                 value: _noGrade,
                                 onChanged: (v) => setState(() => _noGrade = v),
-                                activeColor: AppConstants.primary,
+                                activeThumbColor: AppConstants.primary,
                               ),
                             ],
                           ),
@@ -495,10 +495,12 @@ class _AttachmentTile extends StatelessWidget {
     if (mimeType!.startsWith('image/')) return Icons.image_outlined;
     if (mimeType == 'application/pdf') return Icons.picture_as_pdf_outlined;
     if (mimeType!.contains('word')) return Icons.article_outlined;
-    if (mimeType!.contains('spreadsheet') || mimeType!.contains('excel'))
+    if (mimeType!.contains('spreadsheet') || mimeType!.contains('excel')) {
       return Icons.table_chart_outlined;
-    if (mimeType!.contains('presentation') || mimeType!.contains('powerpoint'))
+    }
+    if (mimeType!.contains('presentation') || mimeType!.contains('powerpoint')) {
       return Icons.slideshow_outlined;
+    }
     if (mimeType == 'application/zip') return Icons.folder_zip_outlined;
     return Icons.insert_drive_file_outlined;
   }

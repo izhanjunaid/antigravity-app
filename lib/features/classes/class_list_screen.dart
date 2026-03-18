@@ -184,8 +184,9 @@ class _ClassListTile extends StatelessWidget {
     final l = s.toLowerCase();
     if (l.contains('math')) return Colors.blue;
     if (l.contains('eng')) return Colors.purple;
-    if (l.contains('sci') || l.contains('phys') || l.contains('chem'))
+    if (l.contains('sci') || l.contains('phys') || l.contains('chem')) {
       return Colors.teal;
+    }
     if (l.contains('comp')) return Colors.indigo;
     return Colors.blueGrey;
   }
@@ -194,8 +195,9 @@ class _ClassListTile extends StatelessWidget {
     final l = s.toLowerCase();
     if (l.contains('math')) return Icons.calculate;
     if (l.contains('eng')) return Icons.auto_stories;
-    if (l.contains('sci') || l.contains('phys') || l.contains('chem'))
+    if (l.contains('sci') || l.contains('phys') || l.contains('chem')) {
       return Icons.science;
+    }
     if (l.contains('comp')) return Icons.computer;
     return Icons.school;
   }

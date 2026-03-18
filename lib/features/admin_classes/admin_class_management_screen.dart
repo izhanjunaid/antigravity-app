@@ -197,7 +197,7 @@ class _AdminClassManagementScreenState
                 ),
                 const SizedBox(height: 16),
                 DropdownButtonFormField<String>(
-                  value: selectedTeacherId,
+                  initialValue: selectedTeacherId,
                   dropdownColor: AppConstants.surface,
                   style: const TextStyle(color: AppConstants.textPrimary),
                   decoration: const InputDecoration(
