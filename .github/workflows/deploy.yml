@@ -25,6 +25,7 @@ on:
 env:
   FLUTTER_VERSION: "3.41.4"
   FLUTTER_CHANNEL: "stable"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   # ── Job 1: Lint & Analyze ──────────────────────────────────────────────────
@@ -45,15 +46,12 @@ jobs:
           cache-key: flutter-${{ env.FLUTTER_VERSION }}-${{ runner.os }}
 
       - name: Get dependencies
-        working-directory: flutter_app
         run: flutter pub get
 
       - name: Run Flutter analyze
-        working-directory: flutter_app
         run: flutter analyze --no-fatal-infos
 
       - name: Run unit tests
-        working-directory: flutter_app
         run: flutter test --no-pub
         continue-on-error: true  # Don't block deploy if tests are WIP
 
@@ -76,11 +74,9 @@ jobs:
           cache-key: flutter-${{ env.FLUTTER_VERSION }}-${{ runner.os }}
 
       - name: Get dependencies
-        working-directory: flutter_app
         run: flutter pub get
 
       - name: Build Flutter Web (release)
-        working-directory: flutter_app
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
@@ -97,7 +93,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: flutter-web-build
-          path: flutter_app/build/web/
+          path: build/web/
           retention-days: 1
 
   # ── Job 3: Deploy to Vercel ────────────────────────────────────────────────
@@ -116,13 +112,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: flutter-web-build
-          path: flutter_app/build/web/
+          path: build/web/
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
       - name: Deploy to Vercel (Production)
-        working-directory: flutter_app
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
