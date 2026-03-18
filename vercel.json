@@ -1,5 +1,5 @@
 {
-  "buildCommand": "bash build.sh",
+  "buildCommand": "echo 'Prebuilt by GitHub'",
   "outputDirectory": "build/web",
   "installCommand": "echo 'No npm install needed'",
   "framework": null,
