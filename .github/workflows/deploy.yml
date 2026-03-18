@@ -126,11 +126,14 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
+          # Inject vercel.json into the static payload to bypass remote builds but keep routing
+          cat vercel.json | jq '.buildCommand = "echo \"Bypassing Vercel Build\"" | .outputDirectory = null | .installCommand = "echo \"Bypassing Install\"" | .framework = null' > build/web/vercel.json
+          
           vercel deploy \
+            build/web \
             --prod \
             --token="$VERCEL_TOKEN" \
-            --yes \
-            build/web/
+            --yes
 
       - name: Comment deployment URL on PR
         if: github.event_name == 'pull_request'
