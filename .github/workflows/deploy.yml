@@ -127,7 +127,7 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           # Inject vercel.json into the static payload to bypass remote builds but keep routing
-          cat vercel.json | jq '.buildCommand = "echo \"Bypassing Vercel Build\"" | .outputDirectory = null | .installCommand = "echo \"Bypassing Install\"" | .framework = null' > build/web/vercel.json
+          cat vercel.json | jq 'del(.buildCommand, .installCommand, .outputDirectory, .framework)' > build/web/vercel.json
           
           vercel deploy \
             build/web \
